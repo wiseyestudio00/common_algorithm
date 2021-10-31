@@ -1,0 +1,60 @@
+# two way, either heapq or queue.PriorityQueue
+
+# heapq
+heap = [......]
+
+# o(n)
+heapq.heapify(heap)
+
+# o(log(n))
+heapq.heappop(heap)
+
+# o(log(n))
+heapq.heappush(heap, item)
+
+# more efficient than push + pop
+heapq.heappushpop(heap, item)
+
+# by default, heapq is smallest element has high priority
+
+heap = [3, 2, 1]
+
+heapq.heapify(heap)
+
+while(heap):
+    print(heapq.heappop(heap))
+
+# prints 1, 2, 3
+
+# if you want to make biggest element has high priority
+# you can trick a little and invert the elements
+
+heap = [3, 2, 1]
+
+for i in range(len(heap)):
+    heap[i] = -heap[i]
+
+heapq.heapify(heap)
+
+while(heap):
+    print(-heapq.heappop(heap))
+
+# prints 3, 2, 1
+
+
+
+# queue.PriorityQueue
+heap = queue.PriorityQueue()
+
+# allow multiple keys (first element has higher priority)
+heap.put((4, "k"))
+heap.put((3, "s"))
+heap.put((1, "t"))
+heap.put((2, "a"))
+
+while not heap.empty():
+    element = heap.get()
+    print(element)
+
+# prints (1, "t") (2, "a") (3, "s") (2, "k")
+# again, its low element comes first
