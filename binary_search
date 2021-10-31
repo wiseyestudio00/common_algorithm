@@ -1,0 +1,31 @@
+# recursion
+def binary_search(arr, l, r, tar):
+    if r >= l:
+        mid = l + (r - l) // 2
+
+        if arr[mid] == tar:
+            return mid
+        
+        elif arr[mid] > tar:
+            return binary_search(arr, l, mid-1, tar)
+        
+        else:
+            return binary_search(arr, mid + 1, r, tar)
+
+    else:
+        return -1
+
+
+# iterative
+def binary_search(arr, l, r, tar):
+    while l <= r:
+        mid = l + (r - l) // 2
+
+        if arr[mid] == tar:
+            return mid
+        elif arr[mid] < tar:
+            l = mid + 1
+        else:
+            r = mid - 1
+
+    return -1

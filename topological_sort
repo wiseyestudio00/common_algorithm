@@ -1,0 +1,18 @@
+create a possible order to loop through a graph with prerequisites for every node
+
+def tolopogical_sort(graph):
+	res = []
+	set = set of all nodes with no incoming edge
+
+	while s is not empty:
+		remove a node n from set
+		add n to res
+		for each node m with an edge from n->m:
+			remove the edge
+			if m has no edge:
+				add m to set
+	
+	if graph is empty:
+		return res
+	else:
+		the graph doesn't have a tolopogical_sorting

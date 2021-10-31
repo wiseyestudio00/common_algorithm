@@ -1,0 +1,28 @@
+# traverse from the left-most end, down to the branches everytime
+# in BST, it givs increasing order
+
+def inorder_recursive(node):
+	if node == None:
+		return
+
+	inorder_recursive(node.left)
+
+	print(node.value)
+
+	inorder_recursive(node.right)
+
+
+def inorder_inplace(node):
+	current = root
+	stack = []
+
+	while True:
+		if current is not None:
+			stack.append(current)
+			current = current.left
+		elif(stack):
+			current = stack.pop()
+			print(current.value)
+			current = current.right
+		else:
+			break
