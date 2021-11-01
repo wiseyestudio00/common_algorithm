@@ -15,6 +15,9 @@ heapq.heappush(heap, item)
 # more efficient than push + pop
 heapq.heappushpop(heap, item)
 
+# basically peek()
+heap[0]
+
 # by default, heapq is smallest element has high priority
 
 heap = [3, 2, 1]

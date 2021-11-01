@@ -13,7 +13,7 @@ def inorder_recursive(node):
 
 
 def inorder_inplace(node):
-	current = root
+	current = node
 	stack = []
 
 	while True:
